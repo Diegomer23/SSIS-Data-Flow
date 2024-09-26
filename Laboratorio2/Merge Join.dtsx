@@ -1,0 +1,1957 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/18/2024 5:45:36 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="TRSLAP0639"
+  DTS:CreatorName="TRSLAP0639\DiegoM"
+  DTS:DTSID="{F0CC98F8-DE67-47FA-A430-479E2BECC27F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{AA328963-9441-40F5-AF98-93F7A20702A1}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C2965CCF-364C-40C9-BF00-4F54B4B33F41}"
+      DTS:ObjectName="LocalHost.AdventureWorksDW2016">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=AdventureWorksDW2016;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{C2965CCF-364C-40C9-BF00-4F54B4B33F41}LocalHost.AdventureWorksDW2016;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Reporte txt]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{48614F49-3AF4-4F9B-9C52-403FB854DACE}"
+      DTS:ObjectName="Reporte txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2058"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\DiegoM\OneDrive - tracusa la ruta del sol\Documentos\Diego\SQL Server Integration Service\Merge Join\Reporte.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishProductName"
+              DTS:DTSID="{AD9F8B93-6C26-4420-BB4F-41B0D474A259}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishProductCategoryName"
+              DTS:DTSID="{9B6073F6-0555-4756-B059-5946D98A53C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishProductSubcategoryName"
+              DTS:DTSID="{98CA0944-9CD9-4AFB-8E0F-F38B40527F20}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitPrice"
+              DTS:DTSID="{9EEE4EDE-E461-4F3B-BABC-D41D2406497E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SalesAmount"
+              DTS:DTSID="{2CC1B373-2885-4B4F-8A76-7FBA3EEF27C6}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Merge Join"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{FAD1BD0F-16FA-466F-894B-0D3FC25DBBB5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Merge Join"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Merge Join\DimProduct"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DimProduct"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT ProductKey, ProductSubcategoryKey, EnglishProductName
+FROM DimProduct
+ORDER BY ProductSubcategoryKey</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Merge Join\DimProduct.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Output]"
+                  isSorted="true"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Output].Columns[ProductKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Output].ExternalColumns[ProductKey]"
+                      lineageId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Output].Columns[ProductKey]"
+                      name="ProductKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Output].Columns[ProductSubcategoryKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Output].ExternalColumns[ProductSubcategoryKey]"
+                      lineageId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Output].Columns[ProductSubcategoryKey]"
+                      name="ProductSubcategoryKey"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Output].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Output].ExternalColumns[EnglishProductName]"
+                      length="50"
+                      lineageId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Output].Columns[EnglishProductName]"
+                      name="EnglishProductName"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Output].ExternalColumns[ProductKey]"
+                      dataType="i4"
+                      name="ProductKey" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Output].ExternalColumns[ProductSubcategoryKey]"
+                      dataType="i4"
+                      name="ProductSubcategoryKey" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Output].ExternalColumns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductName" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Error Output].Columns[ProductKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Error Output].Columns[ProductKey]"
+                      name="ProductKey" />
+                    <outputColumn
+                      refId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Error Output].Columns[ProductSubcategoryKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Error Output].Columns[ProductSubcategoryKey]"
+                      name="ProductSubcategoryKey" />
+                    <outputColumn
+                      refId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Error Output].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Error Output].Columns[EnglishProductName]"
+                      name="EnglishProductName" />
+                    <outputColumn
+                      refId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Merge Join\DimProductCategory"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DimProductCategory"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT ProductCategoryKey, EnglishProductCategoryName
+FROM DimProductCategory
+ORDER BY ProductCategoryKey</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Merge Join\DimProductCategory.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Merge Join\DimProductCategory.Outputs[OLE DB Source Output]"
+                  isSorted="true"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Join\DimProductCategory.Outputs[OLE DB Source Output].Columns[ProductCategoryKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge Join\DimProductCategory.Outputs[OLE DB Source Output].ExternalColumns[ProductCategoryKey]"
+                      lineageId="Package\Merge Join\DimProductCategory.Outputs[OLE DB Source Output].Columns[ProductCategoryKey]"
+                      name="ProductCategoryKey"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge Join\DimProductCategory.Outputs[OLE DB Source Output].Columns[EnglishProductCategoryName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge Join\DimProductCategory.Outputs[OLE DB Source Output].ExternalColumns[EnglishProductCategoryName]"
+                      length="50"
+                      lineageId="Package\Merge Join\DimProductCategory.Outputs[OLE DB Source Output].Columns[EnglishProductCategoryName]"
+                      name="EnglishProductCategoryName"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Merge Join\DimProductCategory.Outputs[OLE DB Source Output].ExternalColumns[ProductCategoryKey]"
+                      dataType="i4"
+                      name="ProductCategoryKey" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Join\DimProductCategory.Outputs[OLE DB Source Output].ExternalColumns[EnglishProductCategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductCategoryName" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Merge Join\DimProductCategory.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Join\DimProductCategory.Outputs[OLE DB Source Error Output].Columns[ProductCategoryKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Join\DimProductCategory.Outputs[OLE DB Source Error Output].Columns[ProductCategoryKey]"
+                      name="ProductCategoryKey" />
+                    <outputColumn
+                      refId="Package\Merge Join\DimProductCategory.Outputs[OLE DB Source Error Output].Columns[EnglishProductCategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Merge Join\DimProductCategory.Outputs[OLE DB Source Error Output].Columns[EnglishProductCategoryName]"
+                      name="EnglishProductCategoryName" />
+                    <outputColumn
+                      refId="Package\Merge Join\DimProductCategory.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Merge Join\DimProductCategory.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Merge Join\DimProductCategory.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Merge Join\DimProductCategory.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Merge Join\DimProductSubCategory"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DimProductSubCategory"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT ProductSubcategoryKey, ProductCategoryKey, EnglishProductSubcategoryName
+FROM DimProductSubcategory
+ORDER BY ProductSubcategoryKey</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Merge Join\DimProductSubCategory.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Output]"
+                  isSorted="true"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Output].Columns[ProductSubcategoryKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Output].ExternalColumns[ProductSubcategoryKey]"
+                      lineageId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Output].Columns[ProductSubcategoryKey]"
+                      name="ProductSubcategoryKey"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Output].Columns[ProductCategoryKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Output].ExternalColumns[ProductCategoryKey]"
+                      lineageId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Output].Columns[ProductCategoryKey]"
+                      name="ProductCategoryKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Output].Columns[EnglishProductSubcategoryName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Output].ExternalColumns[EnglishProductSubcategoryName]"
+                      length="50"
+                      lineageId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Output].Columns[EnglishProductSubcategoryName]"
+                      name="EnglishProductSubcategoryName"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Output].ExternalColumns[ProductSubcategoryKey]"
+                      dataType="i4"
+                      name="ProductSubcategoryKey" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Output].ExternalColumns[ProductCategoryKey]"
+                      dataType="i4"
+                      name="ProductCategoryKey" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Output].ExternalColumns[EnglishProductSubcategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductSubcategoryName" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Error Output].Columns[ProductSubcategoryKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Error Output].Columns[ProductSubcategoryKey]"
+                      name="ProductSubcategoryKey" />
+                    <outputColumn
+                      refId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Error Output].Columns[ProductCategoryKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Error Output].Columns[ProductCategoryKey]"
+                      name="ProductCategoryKey" />
+                    <outputColumn
+                      refId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Error Output].Columns[EnglishProductSubcategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Error Output].Columns[EnglishProductSubcategoryName]"
+                      name="EnglishProductSubcategoryName" />
+                    <outputColumn
+                      refId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Merge Join\FactResellerSales"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="FactResellerSales"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT ProductKey, UnitPrice, SalesAmount
+FROM FactResellerSales
+ORDER BY ProductKey</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Merge Join\FactResellerSales.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Output]"
+                  isSorted="true"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Output].Columns[ProductKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Output].ExternalColumns[ProductKey]"
+                      lineageId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Output].Columns[ProductKey]"
+                      name="ProductKey"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Output].Columns[UnitPrice]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Output].Columns[UnitPrice]"
+                      name="UnitPrice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Output].Columns[SalesAmount]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Output].ExternalColumns[SalesAmount]"
+                      lineageId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Output].Columns[SalesAmount]"
+                      name="SalesAmount"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Output].ExternalColumns[ProductKey]"
+                      dataType="i4"
+                      name="ProductKey" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Output].ExternalColumns[SalesAmount]"
+                      dataType="cy"
+                      name="SalesAmount" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Error Output].Columns[ProductKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Error Output].Columns[ProductKey]"
+                      name="ProductKey" />
+                    <outputColumn
+                      refId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
+                      name="UnitPrice" />
+                    <outputColumn
+                      refId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Error Output].Columns[SalesAmount]"
+                      dataType="cy"
+                      lineageId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Error Output].Columns[SalesAmount]"
+                      name="SalesAmount" />
+                    <outputColumn
+                      refId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Merge Join\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Merge Join\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Merge Join\Merge Join.Inputs[Merge Join Left Input].Columns[ProductSubcategoryKey]"
+                      cachedDataType="i4"
+                      cachedName="ProductSubcategoryKey"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Output].Columns[ProductSubcategoryKey]" />
+                    <inputColumn
+                      refId="Package\Merge Join\Merge Join.Inputs[Merge Join Left Input].Columns[ProductKey]"
+                      cachedDataType="i4"
+                      cachedName="ProductKey"
+                      lineageId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Output].Columns[ProductKey]" />
+                    <inputColumn
+                      refId="Package\Merge Join\Merge Join.Inputs[Merge Join Left Input].Columns[EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      lineageId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Output].Columns[EnglishProductName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Merge Join\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Merge Join\Merge Join.Inputs[Merge Join Right Input].Columns[ProductSubcategoryKey]"
+                      cachedDataType="i4"
+                      cachedName="ProductSubcategoryKey"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Output].Columns[ProductSubcategoryKey]" />
+                    <inputColumn
+                      refId="Package\Merge Join\Merge Join.Inputs[Merge Join Right Input].Columns[ProductCategoryKey]"
+                      cachedDataType="i4"
+                      cachedName="ProductCategoryKey"
+                      lineageId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Output].Columns[ProductCategoryKey]" />
+                    <inputColumn
+                      refId="Package\Merge Join\Merge Join.Inputs[Merge Join Right Input].Columns[EnglishProductSubcategoryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductSubcategoryName"
+                      lineageId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Output].Columns[EnglishProductSubcategoryName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Merge Join\Merge Join.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Join\Merge Join.Outputs[Merge Join Output].Columns[ProductKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Join\Merge Join.Outputs[Merge Join Output].Columns[ProductKey]"
+                      name="ProductKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Merge Join\Merge Join.Inputs[Merge Join Left Input].Columns[ProductKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Join\Merge Join.Outputs[Merge Join Output].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Merge Join\Merge Join.Outputs[Merge Join Output].Columns[EnglishProductName]"
+                      name="EnglishProductName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Merge Join\Merge Join.Inputs[Merge Join Left Input].Columns[EnglishProductName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Join\Merge Join.Outputs[Merge Join Output].Columns[ProductCategoryKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Join\Merge Join.Outputs[Merge Join Output].Columns[ProductCategoryKey]"
+                      name="ProductCategoryKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Merge Join\Merge Join.Inputs[Merge Join Right Input].Columns[ProductCategoryKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Join\Merge Join.Outputs[Merge Join Output].Columns[EnglishProductSubcategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Merge Join\Merge Join.Outputs[Merge Join Output].Columns[EnglishProductSubcategoryName]"
+                      name="EnglishProductSubcategoryName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Merge Join\Merge Join.Inputs[Merge Join Right Input].Columns[EnglishProductSubcategoryName]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Merge Join\Merge Join 1"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Merge Join\Merge Join 1.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Merge Join\Merge Join 1.Inputs[Merge Join Left Input].Columns[ProductCategoryKey]"
+                      cachedDataType="i4"
+                      cachedName="ProductCategoryKey"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Merge Join\Sort.Outputs[Sort Output].Columns[ProductCategoryKey]" />
+                    <inputColumn
+                      refId="Package\Merge Join\Merge Join 1.Inputs[Merge Join Left Input].Columns[ProductKey]"
+                      cachedDataType="i4"
+                      cachedName="ProductKey"
+                      lineageId="Package\Merge Join\Sort.Outputs[Sort Output].Columns[ProductKey]" />
+                    <inputColumn
+                      refId="Package\Merge Join\Merge Join 1.Inputs[Merge Join Left Input].Columns[EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      lineageId="Package\Merge Join\Sort.Outputs[Sort Output].Columns[EnglishProductName]" />
+                    <inputColumn
+                      refId="Package\Merge Join\Merge Join 1.Inputs[Merge Join Left Input].Columns[EnglishProductSubcategoryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductSubcategoryName"
+                      lineageId="Package\Merge Join\Sort.Outputs[Sort Output].Columns[EnglishProductSubcategoryName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Merge Join\Merge Join 1.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Merge Join\Merge Join 1.Inputs[Merge Join Right Input].Columns[ProductCategoryKey]"
+                      cachedDataType="i4"
+                      cachedName="ProductCategoryKey"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Merge Join\DimProductCategory.Outputs[OLE DB Source Output].Columns[ProductCategoryKey]" />
+                    <inputColumn
+                      refId="Package\Merge Join\Merge Join 1.Inputs[Merge Join Right Input].Columns[EnglishProductCategoryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductCategoryName"
+                      lineageId="Package\Merge Join\DimProductCategory.Outputs[OLE DB Source Output].Columns[EnglishProductCategoryName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Merge Join\Merge Join 1.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Join\Merge Join 1.Outputs[Merge Join Output].Columns[ProductKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Join\Merge Join 1.Outputs[Merge Join Output].Columns[ProductKey]"
+                      name="ProductKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Merge Join\Merge Join 1.Inputs[Merge Join Left Input].Columns[ProductKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Join\Merge Join 1.Outputs[Merge Join Output].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Merge Join\Merge Join 1.Outputs[Merge Join Output].Columns[EnglishProductName]"
+                      name="EnglishProductName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Merge Join\Merge Join 1.Inputs[Merge Join Left Input].Columns[EnglishProductName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Join\Merge Join 1.Outputs[Merge Join Output].Columns[EnglishProductSubcategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Merge Join\Merge Join 1.Outputs[Merge Join Output].Columns[EnglishProductSubcategoryName]"
+                      name="EnglishProductSubcategoryName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Merge Join\Merge Join 1.Inputs[Merge Join Left Input].Columns[EnglishProductSubcategoryName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Join\Merge Join 1.Outputs[Merge Join Output].Columns[EnglishProductCategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Merge Join\Merge Join 1.Outputs[Merge Join Output].Columns[EnglishProductCategoryName]"
+                      name="EnglishProductCategoryName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Merge Join\Merge Join 1.Inputs[Merge Join Right Input].Columns[EnglishProductCategoryName]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Merge Join\Merge Join 2"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join 2"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Merge Join\Merge Join 2.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Merge Join\Merge Join 2.Inputs[Merge Join Left Input].Columns[ProductKey]"
+                      cachedDataType="i4"
+                      cachedName="ProductKey"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Merge Join\Sort 1.Outputs[Sort Output].Columns[ProductKey]" />
+                    <inputColumn
+                      refId="Package\Merge Join\Merge Join 2.Inputs[Merge Join Left Input].Columns[EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      lineageId="Package\Merge Join\Sort 1.Outputs[Sort Output].Columns[EnglishProductName]" />
+                    <inputColumn
+                      refId="Package\Merge Join\Merge Join 2.Inputs[Merge Join Left Input].Columns[EnglishProductCategoryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductCategoryName"
+                      lineageId="Package\Merge Join\Sort 1.Outputs[Sort Output].Columns[EnglishProductCategoryName]" />
+                    <inputColumn
+                      refId="Package\Merge Join\Merge Join 2.Inputs[Merge Join Left Input].Columns[EnglishProductSubcategoryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductSubcategoryName"
+                      lineageId="Package\Merge Join\Sort 1.Outputs[Sort Output].Columns[EnglishProductSubcategoryName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Merge Join\Merge Join 2.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Merge Join\Merge Join 2.Inputs[Merge Join Right Input].Columns[ProductKey]"
+                      cachedDataType="i4"
+                      cachedName="ProductKey"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Output].Columns[ProductKey]" />
+                    <inputColumn
+                      refId="Package\Merge Join\Merge Join 2.Inputs[Merge Join Right Input].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      lineageId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Output].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Merge Join\Merge Join 2.Inputs[Merge Join Right Input].Columns[SalesAmount]"
+                      cachedDataType="cy"
+                      cachedName="SalesAmount"
+                      lineageId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Output].Columns[SalesAmount]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Merge Join\Merge Join 2.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Join\Merge Join 2.Outputs[Merge Join Output].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Merge Join\Merge Join 2.Outputs[Merge Join Output].Columns[EnglishProductName]"
+                      name="EnglishProductName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Merge Join\Merge Join 2.Inputs[Merge Join Left Input].Columns[EnglishProductName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Join\Merge Join 2.Outputs[Merge Join Output].Columns[EnglishProductCategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Merge Join\Merge Join 2.Outputs[Merge Join Output].Columns[EnglishProductCategoryName]"
+                      name="EnglishProductCategoryName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Merge Join\Merge Join 2.Inputs[Merge Join Left Input].Columns[EnglishProductCategoryName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Join\Merge Join 2.Outputs[Merge Join Output].Columns[EnglishProductSubcategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Merge Join\Merge Join 2.Outputs[Merge Join Output].Columns[EnglishProductSubcategoryName]"
+                      name="EnglishProductSubcategoryName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Merge Join\Merge Join 2.Inputs[Merge Join Left Input].Columns[EnglishProductSubcategoryName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Join\Merge Join 2.Outputs[Merge Join Output].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Merge Join\Merge Join 2.Outputs[Merge Join Output].Columns[UnitPrice]"
+                      name="UnitPrice">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Merge Join\Merge Join 2.Inputs[Merge Join Right Input].Columns[UnitPrice]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Join\Merge Join 2.Outputs[Merge Join Output].Columns[SalesAmount]"
+                      dataType="cy"
+                      lineageId="Package\Merge Join\Merge Join 2.Outputs[Merge Join Output].Columns[SalesAmount]"
+                      name="SalesAmount">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Merge Join\Merge Join 2.Inputs[Merge Join Right Input].Columns[SalesAmount]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Merge Join\Resultado"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="2058"
+              name="Resultado"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Merge Join\Resultado.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Reporte txt]"
+                  connectionManagerRefId="Package.ConnectionManagers[Reporte txt]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Merge Join\Resultado.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Merge Join\Resultado.Inputs[Flat File Destination Input].Columns[EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      externalMetadataColumnId="Package\Merge Join\Resultado.Inputs[Flat File Destination Input].ExternalColumns[EnglishProductName]"
+                      lineageId="Package\Merge Join\Merge Join 2.Outputs[Merge Join Output].Columns[EnglishProductName]" />
+                    <inputColumn
+                      refId="Package\Merge Join\Resultado.Inputs[Flat File Destination Input].Columns[EnglishProductCategoryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductCategoryName"
+                      externalMetadataColumnId="Package\Merge Join\Resultado.Inputs[Flat File Destination Input].ExternalColumns[EnglishProductCategoryName]"
+                      lineageId="Package\Merge Join\Merge Join 2.Outputs[Merge Join Output].Columns[EnglishProductCategoryName]" />
+                    <inputColumn
+                      refId="Package\Merge Join\Resultado.Inputs[Flat File Destination Input].Columns[EnglishProductSubcategoryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductSubcategoryName"
+                      externalMetadataColumnId="Package\Merge Join\Resultado.Inputs[Flat File Destination Input].ExternalColumns[EnglishProductSubcategoryName]"
+                      lineageId="Package\Merge Join\Merge Join 2.Outputs[Merge Join Output].Columns[EnglishProductSubcategoryName]" />
+                    <inputColumn
+                      refId="Package\Merge Join\Resultado.Inputs[Flat File Destination Input].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      externalMetadataColumnId="Package\Merge Join\Resultado.Inputs[Flat File Destination Input].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Merge Join\Merge Join 2.Outputs[Merge Join Output].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Merge Join\Resultado.Inputs[Flat File Destination Input].Columns[SalesAmount]"
+                      cachedDataType="cy"
+                      cachedName="SalesAmount"
+                      externalMetadataColumnId="Package\Merge Join\Resultado.Inputs[Flat File Destination Input].ExternalColumns[SalesAmount]"
+                      lineageId="Package\Merge Join\Merge Join 2.Outputs[Merge Join Output].Columns[SalesAmount]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Merge Join\Resultado.Inputs[Flat File Destination Input].ExternalColumns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Join\Resultado.Inputs[Flat File Destination Input].ExternalColumns[EnglishProductCategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductCategoryName" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Join\Resultado.Inputs[Flat File Destination Input].ExternalColumns[EnglishProductSubcategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductSubcategoryName" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Join\Resultado.Inputs[Flat File Destination Input].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Join\Resultado.Inputs[Flat File Destination Input].ExternalColumns[SalesAmount]"
+                      dataType="cy"
+                      name="SalesAmount" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Merge Join\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Merge Join\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Merge Join\Sort.Inputs[Sort Input].Columns[ProductKey]"
+                      cachedDataType="i4"
+                      cachedName="ProductKey"
+                      lineageId="Package\Merge Join\Merge Join.Outputs[Merge Join Output].Columns[ProductKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge Join\Sort.Inputs[Sort Input].Columns[EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      lineageId="Package\Merge Join\Merge Join.Outputs[Merge Join Output].Columns[EnglishProductName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge Join\Sort.Inputs[Sort Input].Columns[ProductCategoryKey]"
+                      cachedDataType="i4"
+                      cachedName="ProductCategoryKey"
+                      lineageId="Package\Merge Join\Merge Join.Outputs[Merge Join Output].Columns[ProductCategoryKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge Join\Sort.Inputs[Sort Input].Columns[EnglishProductSubcategoryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductSubcategoryName"
+                      lineageId="Package\Merge Join\Merge Join.Outputs[Merge Join Output].Columns[EnglishProductSubcategoryName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Merge Join\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Join\Sort.Outputs[Sort Output].Columns[ProductKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Join\Sort.Outputs[Sort Output].Columns[ProductKey]"
+                      name="ProductKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Merge Join\Merge Join.Outputs[Merge Join Output].Columns[ProductKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Join\Sort.Outputs[Sort Output].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Merge Join\Sort.Outputs[Sort Output].Columns[EnglishProductName]"
+                      name="EnglishProductName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Merge Join\Merge Join.Outputs[Merge Join Output].Columns[EnglishProductName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Join\Sort.Outputs[Sort Output].Columns[ProductCategoryKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Join\Sort.Outputs[Sort Output].Columns[ProductCategoryKey]"
+                      name="ProductCategoryKey"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Merge Join\Merge Join.Outputs[Merge Join Output].Columns[ProductCategoryKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Join\Sort.Outputs[Sort Output].Columns[EnglishProductSubcategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Merge Join\Sort.Outputs[Sort Output].Columns[EnglishProductSubcategoryName]"
+                      name="EnglishProductSubcategoryName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Merge Join\Merge Join.Outputs[Merge Join Output].Columns[EnglishProductSubcategoryName]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Merge Join\Sort 1"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort 1"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Merge Join\Sort 1.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Merge Join\Sort 1.Inputs[Sort Input].Columns[ProductKey]"
+                      cachedDataType="i4"
+                      cachedName="ProductKey"
+                      lineageId="Package\Merge Join\Merge Join 1.Outputs[Merge Join Output].Columns[ProductKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge Join\Sort 1.Inputs[Sort Input].Columns[EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      lineageId="Package\Merge Join\Merge Join 1.Outputs[Merge Join Output].Columns[EnglishProductName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge Join\Sort 1.Inputs[Sort Input].Columns[EnglishProductSubcategoryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductSubcategoryName"
+                      lineageId="Package\Merge Join\Merge Join 1.Outputs[Merge Join Output].Columns[EnglishProductSubcategoryName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge Join\Sort 1.Inputs[Sort Input].Columns[EnglishProductCategoryName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EnglishProductCategoryName"
+                      lineageId="Package\Merge Join\Merge Join 1.Outputs[Merge Join Output].Columns[EnglishProductCategoryName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Merge Join\Sort 1.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Join\Sort 1.Outputs[Sort Output].Columns[ProductKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Join\Sort 1.Outputs[Sort Output].Columns[ProductKey]"
+                      name="ProductKey"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Merge Join\Merge Join 1.Outputs[Merge Join Output].Columns[ProductKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Join\Sort 1.Outputs[Sort Output].Columns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Merge Join\Sort 1.Outputs[Sort Output].Columns[EnglishProductName]"
+                      name="EnglishProductName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Merge Join\Merge Join 1.Outputs[Merge Join Output].Columns[EnglishProductName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Join\Sort 1.Outputs[Sort Output].Columns[EnglishProductSubcategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Merge Join\Sort 1.Outputs[Sort Output].Columns[EnglishProductSubcategoryName]"
+                      name="EnglishProductSubcategoryName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Merge Join\Merge Join 1.Outputs[Merge Join Output].Columns[EnglishProductSubcategoryName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Join\Sort 1.Outputs[Sort Output].Columns[EnglishProductCategoryName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Merge Join\Sort 1.Outputs[Sort Output].Columns[EnglishProductCategoryName]"
+                      name="EnglishProductCategoryName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Merge Join\Merge Join 1.Outputs[Merge Join Output].Columns[EnglishProductCategoryName]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Merge Join.Paths[Merge Join Output]"
+              endId="Package\Merge Join\Sort.Inputs[Sort Input]"
+              name="Merge Join Output"
+              startId="Package\Merge Join\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Merge Join.Paths[Merge Join Output1]"
+              endId="Package\Merge Join\Sort 1.Inputs[Sort Input]"
+              name="Merge Join Output"
+              startId="Package\Merge Join\Merge Join 1.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Merge Join.Paths[Merge Join Output2]"
+              endId="Package\Merge Join\Resultado.Inputs[Flat File Destination Input]"
+              name="Merge Join Output"
+              startId="Package\Merge Join\Merge Join 2.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Merge Join.Paths[OLE DB Source Output]"
+              endId="Package\Merge Join\Merge Join.Inputs[Merge Join Left Input]"
+              name="OLE DB Source Output"
+              startId="Package\Merge Join\DimProduct.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Merge Join.Paths[OLE DB Source Output1]"
+              endId="Package\Merge Join\Merge Join.Inputs[Merge Join Right Input]"
+              name="OLE DB Source Output"
+              startId="Package\Merge Join\DimProductSubCategory.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Merge Join.Paths[OLE DB Source Output2]"
+              endId="Package\Merge Join\Merge Join 1.Inputs[Merge Join Right Input]"
+              name="OLE DB Source Output"
+              startId="Package\Merge Join\DimProductCategory.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Merge Join.Paths[OLE DB Source Output3]"
+              endId="Package\Merge Join\Merge Join 2.Inputs[Merge Join Right Input]"
+              name="OLE DB Source Output"
+              startId="Package\Merge Join\FactResellerSales.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Merge Join.Paths[Sort Output]"
+              endId="Package\Merge Join\Merge Join 1.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Merge Join\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Merge Join.Paths[Sort Output1]"
+              endId="Package\Merge Join\Merge Join 2.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Merge Join\Sort 1.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Merge Join"
+          TopLeft="147,68" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Merge Join">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Merge Join\DimProduct"
+          TopLeft="99,33" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\Merge Join\DimProductSubCategory"
+          TopLeft="280,33" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Merge Join\Merge Join"
+          TopLeft="194,116" />
+        <EdgeLayout
+          Id="Package\Merge Join.Paths[OLE DB Source Output]"
+          TopLeft="167.5,75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="72.1666666666667,41"
+              Start="0,0"
+              End="72.1666666666667,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3075780089153" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.3075780089153"
+                    Point2="0,24.3075780089153"
+                    Point3="4,24.3075780089153" />
+                  <mssgle:LineSegment
+                    End="68.1666666666667,24.3075780089153" />
+                  <mssgle:CubicBezierSegment
+                    Point1="68.1666666666667,24.3075780089153"
+                    Point2="72.1666666666667,24.3075780089153"
+                    Point3="72.1666666666667,28.3075780089153" />
+                  <mssgle:LineSegment
+                    End="72.1666666666667,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge Join.Paths[OLE DB Source Output1]"
+          TopLeft="380.5,75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-99.1666666666667,41"
+              Start="0,0"
+              End="-99.1666666666667,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3075780089153" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.3075780089153"
+                    Point2="0,24.3075780089153"
+                    Point3="-4,24.3075780089153" />
+                  <mssgle:LineSegment
+                    End="-95.1666666666667,24.3075780089153" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-95.1666666666667,24.3075780089153"
+                    Point2="-99.1666666666667,24.3075780089153"
+                    Point3="-99.1666666666667,28.3075780089153" />
+                  <mssgle:LineSegment
+                    End="-99.1666666666667,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Merge Join\DimProductCategory"
+          TopLeft="345.5,197" />
+        <NodeLayout
+          Size="142,42"
+          Id="Package\Merge Join\Merge Join 1"
+          TopLeft="194,262" />
+        <EdgeLayout
+          Id="Package\Merge Join.Paths[OLE DB Source Output2]"
+          TopLeft="436,239">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-148.666666666667,23"
+              Start="0,0"
+              End="-148.666666666667,15.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.64623955431755" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.64623955431755"
+                    Point2="0,13.6462395543175"
+                    Point3="-4,13.6462395543175" />
+                  <mssgle:LineSegment
+                    End="-144.666666666667,13.6462395543175" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-144.666666666667,13.6462395543175"
+                    Point2="-148.666666666667,13.6462395543175"
+                    Point3="-148.666666666667,17.6462395543175" />
+                  <mssgle:LineSegment
+                    End="-148.666666666667,15.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="99,42"
+          Id="Package\Merge Join\Sort"
+          TopLeft="215,197" />
+        <EdgeLayout
+          Id="Package\Merge Join.Paths[Merge Join Output]"
+          TopLeft="262.5,158">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge Join.Paths[Sort Output]"
+          TopLeft="264.5,239">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-21.8333333333333,23"
+              Start="0,0"
+              End="-21.8333333333333,15.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.64623955431755" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.64623955431755"
+                    Point2="0,13.6462395543175"
+                    Point3="-4,13.6462395543175" />
+                  <mssgle:LineSegment
+                    End="-17.8333333333333,13.6462395543175" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-17.8333333333333,13.6462395543175"
+                    Point2="-21.8333333333333,13.6462395543175"
+                    Point3="-21.8333333333333,17.6462395543175" />
+                  <mssgle:LineSegment
+                    End="-21.8333333333333,15.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Merge Join\FactResellerSales"
+          TopLeft="352.5,362.5" />
+        <NodeLayout
+          Size="108,42"
+          Id="Package\Merge Join\Sort 1"
+          TopLeft="211.25,331.25" />
+        <EdgeLayout
+          Id="Package\Merge Join.Paths[Merge Join Output1]"
+          TopLeft="265.125,304">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.25"
+              Start="0,0"
+              End="0,19.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="142,42"
+          Id="Package\Merge Join\Merge Join 2"
+          TopLeft="213.75,410" />
+        <EdgeLayout
+          Id="Package\Merge Join.Paths[OLE DB Source Output3]"
+          TopLeft="352.5,383.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-45.4166666666667,26.5"
+              Start="0,0"
+              End="-45.4166666666667,19">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-41.4166666666667,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-41.4166666666667,0"
+                    Point2="-45.4166666666667,0"
+                    Point3="-45.4166666666667,4" />
+                  <mssgle:LineSegment
+                    End="-45.4166666666667,19" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge Join.Paths[Sort Output1]"
+          TopLeft="263.833333333333,373.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.75"
+              Start="0,0"
+              End="0,29.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="129,42"
+          Id="Package\Merge Join\Resultado"
+          TopLeft="217.5,475" />
+        <EdgeLayout
+          Id="Package\Merge Join.Paths[Merge Join Output2]"
+          TopLeft="283.375,452">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23"
+              Start="0,0"
+              End="0,15.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Merge Join\DimProduct">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Merge Join\DimProductSubCategory">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Merge Join\DimProductCategory">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Merge Join\FactResellerSales">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

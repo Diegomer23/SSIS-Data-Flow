@@ -1,0 +1,2224 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/19/2024 6:08:31 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="TRSLAP0639"
+  DTS:CreatorName="TRSLAP0639\DiegoM"
+  DTS:DTSID="{EA1A3B60-C1B9-4DB7-8903-0A94EA4F0874}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{BCD2B5A5-914B-4048-8047-7AE8A8B30CD9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BEF5E14C-09C2-4CC6-9990-5D604E499DEA}"
+      DTS:ObjectName="LocalHost.AdventureWorksDW2016">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=AdventureWorksDW2016;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{BEF5E14C-09C2-4CC6-9990-5D604E499DEA}LocalHost.AdventureWorksDW2016;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Muestreo de Fila Coincidente]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{0612A68D-26DB-4AA2-BD39-6A1B6BA9968C}"
+      DTS:ObjectName="Muestreo de Fila Coincidente">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2058"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\DiegoM\OneDrive - tracusa la ruta del sol\Documentos\Diego\SQL Server Integration Service\Muestreo de Fila y Muestreo de Porcentaje\Muestreo de Fila Coincidente.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstName"
+              DTS:DTSID="{8BE6AE09-2375-49F4-88F6-3446E2B81A38}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastName"
+              DTS:DTSID="{003F322F-3A81-4242-8BBF-AE3D1A135B1A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BirthDate"
+              DTS:DTSID="{690D43F8-73A2-4A70-BA4D-FCFFE0CF25F9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{DD4FD2B3-AB38-4665-A17E-468874D2D51E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmailAddress"
+              DTS:DTSID="{9CF40946-2E35-433C-A5C7-4652B89CE91C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="YearlyIncome"
+              DTS:DTSID="{B2404E7D-7BBB-4CCD-81C7-58A1B65B3025}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishEducation"
+              DTS:DTSID="{F66A471F-75C5-4145-8180-5B38416B08D7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Phone"
+              DTS:DTSID="{14F5CB91-91CC-4C9F-B2B9-34FB2862C8EE}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Muestreo de Fila No Coincidente]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{212212CF-A3BE-4A5F-B427-F560989B3DD8}"
+      DTS:ObjectName="Muestreo de Fila No Coincidente">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2058"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\DiegoM\OneDrive - tracusa la ruta del sol\Documentos\Diego\SQL Server Integration Service\Muestreo de Fila y Muestreo de Porcentaje\Muestreo de Fila No Coincidente.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstName"
+              DTS:DTSID="{7FAB441C-0021-4E83-8BBE-277B97ED9856}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastName"
+              DTS:DTSID="{94A637E1-BBA1-491C-9B34-189332C89C33}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BirthDate"
+              DTS:DTSID="{1DB5435B-9566-45AC-B975-D18A924A25C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{2EF33FD6-C3E5-486D-8672-E0F8D6889EA3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmailAddress"
+              DTS:DTSID="{67B61E63-BD52-4085-93E0-08A0D816553D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="YearlyIncome"
+              DTS:DTSID="{5EA03D2F-4CA4-4F90-9C7B-7421708556D1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishEducation"
+              DTS:DTSID="{8791EEC6-C1A8-40BD-BE48-22525B155AEC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Phone"
+              DTS:DTSID="{4A95510E-4D29-4D8E-91D0-A35B6DE5F1D4}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Muestreo Porcentaje Coincidente]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{87BAC359-3995-4F2D-81AF-56BA023B74BF}"
+      DTS:ObjectName="Muestreo Porcentaje Coincidente">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2058"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\DiegoM\OneDrive - tracusa la ruta del sol\Documentos\Diego\SQL Server Integration Service\Muestreo de Fila y Muestreo de Porcentaje\Muestreo Porcentaje Coincidente.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstName"
+              DTS:DTSID="{4A9DCCE4-D6BC-4A06-A147-A457325BB1F4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastName"
+              DTS:DTSID="{2FA5D430-718D-4CE9-BFD4-55AA1B354C6B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BirthDate"
+              DTS:DTSID="{7435A67F-3339-4C0B-94F5-B324C5C09A77}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{1E5ED09D-09BB-437C-BC14-678B2D8FB14D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmailAddress"
+              DTS:DTSID="{45B62C32-D176-44C3-9DF0-97FB1C6A41D9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="YearlyIncome"
+              DTS:DTSID="{AE989F1D-0D27-4B87-BFF6-3111CBD35A7A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishEducation"
+              DTS:DTSID="{5A65BDC5-EF8E-46FF-BA51-D1AE55000A49}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Phone"
+              DTS:DTSID="{6021C281-F56D-4AB7-86D0-670908D979F5}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Muestreo Porcentaje No Coincidente]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{7F1525A9-3152-46CB-89B0-856885E58399}"
+      DTS:ObjectName="Muestreo Porcentaje No Coincidente">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2058"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\DiegoM\OneDrive - tracusa la ruta del sol\Documentos\Diego\SQL Server Integration Service\Muestreo de Fila y Muestreo de Porcentaje\Muestreo Porcentaje No Coincidente.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstName"
+              DTS:DTSID="{704A2EB0-BFB6-412E-BF57-A929502F65ED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastName"
+              DTS:DTSID="{C476A288-6F5C-4F28-A806-924E4582A625}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BirthDate"
+              DTS:DTSID="{F9EEC7B5-9053-47FB-84B1-A1FEDC1A8D24}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{4B6C2521-09D5-476B-8183-66EBD7929C23}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmailAddress"
+              DTS:DTSID="{CC17A2E7-09EE-4C6F-909B-8623AD5CC512}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="YearlyIncome"
+              DTS:DTSID="{4945674E-9900-464E-B110-AD0BCD3BAA5E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishEducation"
+              DTS:DTSID="{1517A940-1FE5-49B0-B0E8-4D961A77D284}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Phone"
+              DTS:DTSID="{3303CE7F-135D-4002-8724-7FC9C3C2163D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Muestreo de Fila"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{04811ACA-2D2D-4D14-80D1-29A6D9116A41}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Muestreo de Fila"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Muestreo de Fila\DimCustomer"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DimCustomer"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT TOP 1000 [FirstName]
+      ,[LastName]
+      ,[BirthDate]
+      ,[Gender]
+      ,[EmailAddress]
+      ,[YearlyIncome]
+      ,[EnglishEducation]
+      ,[Phone]
+FROM [AdventureWorksDW2016].[dbo].[DimCustomer]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Muestreo de Fila\DimCustomer.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      length="50"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      length="50"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[BirthDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[BirthDate]"
+                      length="10"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[BirthDate]"
+                      name="BirthDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[Gender]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      length="1"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[EmailAddress]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[EmailAddress]"
+                      length="50"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[EmailAddress]"
+                      name="EmailAddress"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[YearlyIncome]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[YearlyIncome]"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[YearlyIncome]"
+                      name="YearlyIncome"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[EnglishEducation]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[EnglishEducation]"
+                      length="40"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[EnglishEducation]"
+                      name="EnglishEducation"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[Phone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[Phone]"
+                      length="20"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[Phone]"
+                      name="Phone"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[BirthDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="BirthDate" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="1"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[EmailAddress]"
+                      dataType="wstr"
+                      length="50"
+                      name="EmailAddress" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[YearlyIncome]"
+                      dataType="cy"
+                      name="YearlyIncome" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[EnglishEducation]"
+                      dataType="wstr"
+                      length="40"
+                      name="EnglishEducation" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[Phone]"
+                      dataType="wstr"
+                      length="20"
+                      name="Phone" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      name="LastName" />
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Error Output].Columns[BirthDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Error Output].Columns[BirthDate]"
+                      name="BirthDate" />
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      name="Gender" />
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Error Output].Columns[EmailAddress]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Error Output].Columns[EmailAddress]"
+                      name="EmailAddress" />
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Error Output].Columns[YearlyIncome]"
+                      dataType="cy"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Error Output].Columns[YearlyIncome]"
+                      name="YearlyIncome" />
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Error Output].Columns[EnglishEducation]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Error Output].Columns[EnglishEducation]"
+                      name="EnglishEducation" />
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Error Output].Columns[Phone]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Error Output].Columns[Phone]"
+                      name="Phone" />
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Muestreo de Fila\Muestreo Coincidente"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="2058"
+              name="Muestreo Coincidente"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Muestreo de Fila\Muestreo Coincidente.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Muestreo de Fila Coincidente]"
+                  connectionManagerRefId="Package.ConnectionManagers[Muestreo de Fila Coincidente]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].ExternalColumns[FirstName]"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].ExternalColumns[LastName]"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].Columns[BirthDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="BirthDate"
+                      externalMetadataColumnId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].ExternalColumns[BirthDate]"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[BirthDate]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].Columns[Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].Columns[EmailAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EmailAddress"
+                      externalMetadataColumnId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].ExternalColumns[EmailAddress]"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[EmailAddress]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].Columns[YearlyIncome]"
+                      cachedDataType="cy"
+                      cachedName="YearlyIncome"
+                      externalMetadataColumnId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].ExternalColumns[YearlyIncome]"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[YearlyIncome]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].Columns[EnglishEducation]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="EnglishEducation"
+                      externalMetadataColumnId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].ExternalColumns[EnglishEducation]"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[EnglishEducation]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].Columns[Phone]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Phone"
+                      externalMetadataColumnId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].ExternalColumns[Phone]"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[Phone]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].ExternalColumns[BirthDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="BirthDate" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="1"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].ExternalColumns[EmailAddress]"
+                      dataType="wstr"
+                      length="50"
+                      name="EmailAddress" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].ExternalColumns[YearlyIncome]"
+                      dataType="cy"
+                      name="YearlyIncome" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].ExternalColumns[EnglishEducation]"
+                      dataType="wstr"
+                      length="40"
+                      name="EnglishEducation" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input].ExternalColumns[Phone]"
+                      dataType="wstr"
+                      length="20"
+                      name="Phone" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Muestreo de Fila\Muestreo No Coincidente"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="2058"
+              name="Muestreo No Coincidente"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Muestreo de Fila\Muestreo No Coincidente.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Muestreo de Fila No Coincidente]"
+                  connectionManagerRefId="Package.ConnectionManagers[Muestreo de Fila No Coincidente]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[FirstName]"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[LastName]"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].Columns[BirthDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="BirthDate"
+                      externalMetadataColumnId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[BirthDate]"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[BirthDate]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].Columns[Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].Columns[EmailAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EmailAddress"
+                      externalMetadataColumnId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[EmailAddress]"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[EmailAddress]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].Columns[YearlyIncome]"
+                      cachedDataType="cy"
+                      cachedName="YearlyIncome"
+                      externalMetadataColumnId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[YearlyIncome]"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[YearlyIncome]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].Columns[EnglishEducation]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="EnglishEducation"
+                      externalMetadataColumnId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[EnglishEducation]"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[EnglishEducation]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].Columns[Phone]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Phone"
+                      externalMetadataColumnId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[Phone]"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[Phone]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[BirthDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="BirthDate" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="1"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[EmailAddress]"
+                      dataType="wstr"
+                      length="50"
+                      name="EmailAddress" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[YearlyIncome]"
+                      dataType="cy"
+                      name="YearlyIncome" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[EnglishEducation]"
+                      dataType="wstr"
+                      length="40"
+                      name="EnglishEducation" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[Phone]"
+                      dataType="wstr"
+                      length="20"
+                      name="Phone" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Muestreo de Fila\Row Sampling"
+              componentClassID="Microsoft.RowSampling"
+              contactInfo="Row Sampling;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Randomly samples a specific number of rows from an input data flow. For example, use it randomly select products to feature on your Web site."
+              name="Row Sampling">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of rows in the sample."
+                  expressionType="Notify"
+                  name="SamplingValue">50</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the seed for the random number generator."
+                  name="SamplingSeed">0</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Muestreo de Fila\Row Sampling.Inputs[Row Sampling Input 1]"
+                  name="Row Sampling Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Inputs[Row Sampling Input 1].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Inputs[Row Sampling Input 1].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Inputs[Row Sampling Input 1].Columns[BirthDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="BirthDate"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[BirthDate]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Inputs[Row Sampling Input 1].Columns[Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="Gender"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Inputs[Row Sampling Input 1].Columns[EmailAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EmailAddress"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[EmailAddress]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Inputs[Row Sampling Input 1].Columns[YearlyIncome]"
+                      cachedDataType="cy"
+                      cachedName="YearlyIncome"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[YearlyIncome]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Inputs[Row Sampling Input 1].Columns[EnglishEducation]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="EnglishEducation"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[EnglishEducation]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Inputs[Row Sampling Input 1].Columns[Phone]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Phone"
+                      lineageId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[Phone]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output]"
+                  name="Sampling Selected Output">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Output for rows in the sample"
+                      name="Selected">true</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[FirstName]"
+                      name="FirstName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[FirstName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[LastName]"
+                      name="LastName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[LastName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[BirthDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[BirthDate]"
+                      name="BirthDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[BirthDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[Gender]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[Gender]"
+                      name="Gender">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[Gender]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[EmailAddress]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[EmailAddress]"
+                      name="EmailAddress">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[EmailAddress]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[YearlyIncome]"
+                      dataType="cy"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[YearlyIncome]"
+                      name="YearlyIncome">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[YearlyIncome]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[EnglishEducation]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[EnglishEducation]"
+                      name="EnglishEducation">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[EnglishEducation]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[Phone]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output].Columns[Phone]"
+                      name="Phone">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[Phone]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output]"
+                  name="Sampling Unselected Output">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Output for rows in the sample"
+                      name="Selected">false</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[FirstName]"
+                      name="FirstName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[FirstName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[LastName]"
+                      name="LastName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[LastName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[BirthDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[BirthDate]"
+                      name="BirthDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[BirthDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[Gender]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[Gender]"
+                      name="Gender">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[Gender]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[EmailAddress]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[EmailAddress]"
+                      name="EmailAddress">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[EmailAddress]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[YearlyIncome]"
+                      dataType="cy"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[YearlyIncome]"
+                      name="YearlyIncome">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[YearlyIncome]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[EnglishEducation]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[EnglishEducation]"
+                      name="EnglishEducation">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[EnglishEducation]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[Phone]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output].Columns[Phone]"
+                      name="Phone">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output].Columns[Phone]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Muestreo de Fila.Paths[OLE DB Source Output]"
+              endId="Package\Muestreo de Fila\Row Sampling.Inputs[Row Sampling Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\Muestreo de Fila\DimCustomer.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Muestreo de Fila.Paths[Sampling Selected Output]"
+              endId="Package\Muestreo de Fila\Muestreo Coincidente.Inputs[Flat File Destination Input]"
+              name="Sampling Selected Output"
+              startId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Selected Output]" />
+            <path
+              refId="Package\Muestreo de Fila.Paths[Sampling Unselected Output]"
+              endId="Package\Muestreo de Fila\Muestreo No Coincidente.Inputs[Flat File Destination Input]"
+              name="Sampling Unselected Output"
+              startId="Package\Muestreo de Fila\Row Sampling.Outputs[Sampling Unselected Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Muestreo de Porcentaje"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{291AAD0C-C320-4FB4-9FFF-60E713E57BA0}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Muestreo de Porcentaje"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Muestreo de Porcentaje\DimCustomer"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DimCustomer"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT TOP 1000 [FirstName]
+      ,[LastName]
+      ,[BirthDate]
+      ,[Gender]
+      ,[EmailAddress]
+      ,[YearlyIncome]
+      ,[EnglishEducation]
+      ,[Phone]
+FROM [AdventureWorksDW2016].[dbo].[DimCustomer]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Muestreo de Porcentaje\DimCustomer.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.AdventureWorksDW2016]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      length="50"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      length="50"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[BirthDate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[BirthDate]"
+                      length="10"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[BirthDate]"
+                      name="BirthDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[Gender]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      length="1"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[EmailAddress]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[EmailAddress]"
+                      length="50"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[EmailAddress]"
+                      name="EmailAddress"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[YearlyIncome]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[YearlyIncome]"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[YearlyIncome]"
+                      name="YearlyIncome"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[EnglishEducation]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[EnglishEducation]"
+                      length="40"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[EnglishEducation]"
+                      name="EnglishEducation"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[Phone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[Phone]"
+                      length="20"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[Phone]"
+                      name="Phone"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[BirthDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="BirthDate" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="1"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[EmailAddress]"
+                      dataType="wstr"
+                      length="50"
+                      name="EmailAddress" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[YearlyIncome]"
+                      dataType="cy"
+                      name="YearlyIncome" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[EnglishEducation]"
+                      dataType="wstr"
+                      length="40"
+                      name="EnglishEducation" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].ExternalColumns[Phone]"
+                      dataType="wstr"
+                      length="20"
+                      name="Phone" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      name="LastName" />
+                    <outputColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Error Output].Columns[BirthDate]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Error Output].Columns[BirthDate]"
+                      name="BirthDate" />
+                    <outputColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      name="Gender" />
+                    <outputColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Error Output].Columns[EmailAddress]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Error Output].Columns[EmailAddress]"
+                      name="EmailAddress" />
+                    <outputColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Error Output].Columns[YearlyIncome]"
+                      dataType="cy"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Error Output].Columns[YearlyIncome]"
+                      name="YearlyIncome" />
+                    <outputColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Error Output].Columns[EnglishEducation]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Error Output].Columns[EnglishEducation]"
+                      name="EnglishEducation" />
+                    <outputColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Error Output].Columns[Phone]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Error Output].Columns[Phone]"
+                      name="Phone" />
+                    <outputColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Muestreo de Porcentaje\Percentage Sampling"
+              componentClassID="Microsoft.PctSampling"
+              contactInfo="Percentage Sampling;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Randomly samples a percentage of rows from an input data flow. For example, use it twice to help create a data mining model: create one sample for training the model and another sample for testing the model."
+              name="Percentage Sampling">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage size of the sample."
+                  expressionType="Notify"
+                  name="SamplingValue">40</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the seed for the random number generator."
+                  name="SamplingSeed">0</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Muestreo de Porcentaje\Percentage Sampling.Inputs[Percentage Sampling Input 1]"
+                  name="Percentage Sampling Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Muestreo de Porcentaje\Percentage Sampling.Outputs[Sampling Selected Output]"
+                  exclusionGroup="1"
+                  name="Sampling Selected Output"
+                  synchronousInputId="Package\Muestreo de Porcentaje\Percentage Sampling.Inputs[Percentage Sampling Input 1]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Output for rows in the sample"
+                      name="Selected">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Muestreo de Porcentaje\Percentage Sampling.Outputs[Sampling Unselected Output]"
+                  exclusionGroup="1"
+                  name="Sampling Unselected Output"
+                  synchronousInputId="Package\Muestreo de Porcentaje\Percentage Sampling.Inputs[Percentage Sampling Input 1]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Output for rows in the sample"
+                      name="Selected">false</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="2058"
+              name="Reporte Porcentaje Coincidente"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Muestreo Porcentaje Coincidente]"
+                  connectionManagerRefId="Package.ConnectionManagers[Muestreo Porcentaje Coincidente]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].ExternalColumns[FirstName]"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].ExternalColumns[LastName]"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].Columns[BirthDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="BirthDate"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].ExternalColumns[BirthDate]"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[BirthDate]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].Columns[Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].Columns[EmailAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EmailAddress"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].ExternalColumns[EmailAddress]"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[EmailAddress]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].Columns[YearlyIncome]"
+                      cachedDataType="cy"
+                      cachedName="YearlyIncome"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].ExternalColumns[YearlyIncome]"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[YearlyIncome]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].Columns[EnglishEducation]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="EnglishEducation"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].ExternalColumns[EnglishEducation]"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[EnglishEducation]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].Columns[Phone]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Phone"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].ExternalColumns[Phone]"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[Phone]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].ExternalColumns[BirthDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="BirthDate" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="1"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].ExternalColumns[EmailAddress]"
+                      dataType="wstr"
+                      length="50"
+                      name="EmailAddress" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].ExternalColumns[YearlyIncome]"
+                      dataType="cy"
+                      name="YearlyIncome" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].ExternalColumns[EnglishEducation]"
+                      dataType="wstr"
+                      length="40"
+                      name="EnglishEducation" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input].ExternalColumns[Phone]"
+                      dataType="wstr"
+                      length="20"
+                      name="Phone" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="2058"
+              name="Reporte Porcentaje No Coincidente"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Muestreo Porcentaje No Coincidente]"
+                  connectionManagerRefId="Package.ConnectionManagers[Muestreo Porcentaje No Coincidente]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[FirstName]"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[LastName]"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].Columns[BirthDate]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="BirthDate"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[BirthDate]"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[BirthDate]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].Columns[Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].Columns[EmailAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EmailAddress"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[EmailAddress]"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[EmailAddress]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].Columns[YearlyIncome]"
+                      cachedDataType="cy"
+                      cachedName="YearlyIncome"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[YearlyIncome]"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[YearlyIncome]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].Columns[EnglishEducation]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="EnglishEducation"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[EnglishEducation]"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[EnglishEducation]" />
+                    <inputColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].Columns[Phone]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Phone"
+                      externalMetadataColumnId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[Phone]"
+                      lineageId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output].Columns[Phone]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[BirthDate]"
+                      dataType="wstr"
+                      length="10"
+                      name="BirthDate" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="1"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[EmailAddress]"
+                      dataType="wstr"
+                      length="50"
+                      name="EmailAddress" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[YearlyIncome]"
+                      dataType="cy"
+                      name="YearlyIncome" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[EnglishEducation]"
+                      dataType="wstr"
+                      length="40"
+                      name="EnglishEducation" />
+                    <externalMetadataColumn
+                      refId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input].ExternalColumns[Phone]"
+                      dataType="wstr"
+                      length="20"
+                      name="Phone" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Muestreo de Porcentaje.Paths[OLE DB Source Output]"
+              endId="Package\Muestreo de Porcentaje\Percentage Sampling.Inputs[Percentage Sampling Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\Muestreo de Porcentaje\DimCustomer.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Muestreo de Porcentaje.Paths[Sampling Selected Output]"
+              endId="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente.Inputs[Flat File Destination Input]"
+              name="Sampling Selected Output"
+              startId="Package\Muestreo de Porcentaje\Percentage Sampling.Outputs[Sampling Selected Output]" />
+            <path
+              refId="Package\Muestreo de Porcentaje.Paths[Sampling Unselected Output]"
+              endId="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente.Inputs[Flat File Destination Input]"
+              name="Sampling Unselected Output"
+              startId="Package\Muestreo de Porcentaje\Percentage Sampling.Outputs[Sampling Unselected Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{E7311DFC-D9D0-41D2-88E1-62358BE5B10C}"
+      DTS:From="Package\Muestreo de Fila"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Muestreo de Porcentaje" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Muestreo de Fila"
+          TopLeft="111,64" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\Muestreo de Porcentaje"
+          TopLeft="91,132" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="190.25,106">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26"
+              Start="0,0"
+              End="0,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Muestreo de Fila">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Muestreo de Fila\DimCustomer"
+          TopLeft="167,49" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Muestreo de Fila\Row Sampling"
+          TopLeft="160,117" />
+        <EdgeLayout
+          Id="Package\Muestreo de Fila.Paths[OLE DB Source Output]"
+          TopLeft="237.5,91">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26"
+              Start="0,0"
+              End="0,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="203,42"
+          Id="Package\Muestreo de Fila\Muestreo No Coincidente"
+          TopLeft="247,194" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Muestreo de Fila\Muestreo Coincidente"
+          TopLeft="3,190" />
+        <EdgeLayout
+          Id="Package\Muestreo de Fila.Paths[Sampling Selected Output]"
+          TopLeft="211.333333333333,159">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-115.333333333333,31"
+              Start="0,0"
+              End="-115.333333333333,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.59630606860158" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.59630606860158"
+                    Point2="0,12.5963060686016"
+                    Point3="-4,12.5963060686016" />
+                  <mssgle:LineSegment
+                    End="-111.333333333333,12.5963060686016" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-111.333333333333,12.5963060686016"
+                    Point2="-115.333333333333,12.5963060686016"
+                    Point3="-115.333333333333,16.5963060686016" />
+                  <mssgle:LineSegment
+                    End="-115.333333333333,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-115.608717447917,17.5963060686016,115.8841015625,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Muestreo de Fila.Paths[Sampling Unselected Output]"
+          TopLeft="258.666666666667,159">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="89.8333333333334,35"
+              Start="0,0"
+              End="89.8333333333334,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.221635883905" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.221635883905"
+                    Point2="0,14.221635883905"
+                    Point3="4,14.221635883905" />
+                  <mssgle:LineSegment
+                    End="85.8333333333334,14.221635883905" />
+                  <mssgle:CubicBezierSegment
+                    Point1="85.8333333333334,14.221635883905"
+                    Point2="89.8333333333334,14.221635883905"
+                    Point3="89.8333333333334,18.221635883905" />
+                  <mssgle:LineSegment
+                    End="89.8333333333334,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-18.5403841145833,19.221635883905,126.9141015625,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Muestreo de Fila\DimCustomer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Muestreo de Porcentaje">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Muestreo de Porcentaje\DimCustomer"
+          TopLeft="115,71" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Muestreo de Porcentaje\Percentage Sampling"
+          TopLeft="95,143" />
+        <EdgeLayout
+          Id="Package\Muestreo de Porcentaje.Paths[OLE DB Source Output]"
+          TopLeft="187.5,113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="235,42"
+          Id="Package\Muestreo de Porcentaje\Reporte Porcentaje Coincidente"
+          TopLeft="1.4210854715202E-14,220" />
+        <NodeLayout
+          Size="252,42"
+          Id="Package\Muestreo de Porcentaje\Reporte Porcentaje No Coincidente"
+          TopLeft="249.785714285715,219.785714285714" />
+        <EdgeLayout
+          Id="Package\Muestreo de Porcentaje.Paths[Sampling Selected Output]"
+          TopLeft="157.666666666667,185">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-40.1666666666666,35"
+              Start="0,0"
+              End="-40.1666666666666,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.1810344827586" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.1810344827586"
+                    Point2="0,14.1810344827586"
+                    Point3="-4,14.1810344827586" />
+                  <mssgle:LineSegment
+                    End="-36.1666666666666,14.1810344827586" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-36.1666666666666,14.1810344827586"
+                    Point2="-40.1666666666666,14.1810344827586"
+                    Point3="-40.1666666666666,18.1810344827586" />
+                  <mssgle:LineSegment
+                    End="-40.1666666666666,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-78.0253841145833,19.1810344827586,115.8841015625,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Muestreo de Porcentaje.Paths[Sampling Unselected Output]"
+          TopLeft="216.333333333333,185">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="159.452380952381,34.7857142857143"
+              Start="0,0"
+              End="159.452380952381,27.2857142857143">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.0942118226601" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.0942118226601"
+                    Point2="0,14.0942118226601"
+                    Point3="4,14.0942118226601" />
+                  <mssgle:LineSegment
+                    End="155.452380952381,14.0942118226601" />
+                  <mssgle:CubicBezierSegment
+                    Point1="155.452380952381,14.0942118226601"
+                    Point2="159.452380952381,14.0942118226601"
+                    Point3="159.452380952381,18.0942118226601" />
+                  <mssgle:LineSegment
+                    End="159.452380952381,27.2857142857143" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="16.2691396949406,19.0942118226601,126.9141015625,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Muestreo de Porcentaje\DimCustomer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

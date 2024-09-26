@@ -1,0 +1,1598 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/18/2024 5:12:43 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="TRSLAP0639"
+  DTS:CreatorName="TRSLAP0639\DiegoM"
+  DTS:DTSID="{ACB841C2-3513-4A84-806B-3E4565BE3017}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="Union All"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{48684D25-A1B4-4D80-996E-A130C66B5A9C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Conexion Producto 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C794BCB7-B817-4D54-85D7-E287622740AC}"
+      DTS:ObjectName="Conexion Producto 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2058"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\DiegoM\OneDrive - tracusa la ruta del sol\Documentos\Diego\SQL Server Integration Service\Union All\5.1+Producto+1+-+UNION+ALL.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishProductName"
+              DTS:DTSID="{19DF5386-CFDA-438A-AF4A-E4402E9C01B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Color"
+              DTS:DTSID="{9ACB0740-10F4-4623-9B90-C95F308DE5F8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="400"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishDescription"
+              DTS:DTSID="{8048704F-AB21-4560-AAB7-8CA9D80CD248}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ListPrice"
+              DTS:DTSID="{49186A36-6B97-4DE9-8A6A-E321D9F088E0}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Conexion Producto 2]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{D6F9B5DC-E156-4A55-82BB-8E1EA66CBC1A}"
+      DTS:ObjectName="Conexion Producto 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2058"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\DiegoM\OneDrive - tracusa la ruta del sol\Documentos\Diego\SQL Server Integration Service\Union All\5.1+Producto+2+-+UNION+ALL.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishProductName"
+              DTS:DTSID="{0ADD4CD3-FD31-4E54-882F-35FEAC228E79}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Color"
+              DTS:DTSID="{7CBF0437-66C3-47A1-A02B-2353BACF99FB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="400"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishDescription"
+              DTS:DTSID="{81234294-EEFC-4897-B7F2-A71ACFCE9103}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ListPrice"
+              DTS:DTSID="{1195664F-71E4-4034-9EB2-7C51545CDF4A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Conexion Producto 3]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B8C13548-9C20-4692-B452-5FCA3F5B0062}"
+      DTS:ObjectName="Conexion Producto 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2058"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\DiegoM\OneDrive - tracusa la ruta del sol\Documentos\Diego\SQL Server Integration Service\Union All\5.1+Producto+3+-+UNION+ALL.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishProductName"
+              DTS:DTSID="{6EB8ADFE-D16B-4B4C-950D-66CE8E5A72E8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Color"
+              DTS:DTSID="{894A51C1-BA4E-449D-95E2-4CF762DABDD6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="400"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EnglishDescription"
+              DTS:DTSID="{6460AF69-D1F9-4373-BA2A-4B48C0BD499D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ListPrice"
+              DTS:DTSID="{016ACC5F-9AE7-4CAA-81CC-D80A32DEF7E6}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[TRSLAP0639.STREAMING]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D86BFD54-3D9A-4B4D-A410-2D6E7E5F8CDC}"
+      DTS:ObjectName="TRSLAP0639.STREAMING">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=TRSLAP0639;Initial Catalog=STREAMING;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Union All-{D86BFD54-3D9A-4B4D-A410-2D6E7E5F8CDC}TRSLAP0639.STREAMING;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga Union All"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{227D7B10-8FDD-4A25-9C02-645EDC322810}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga Union All"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carga Union All\Carga Producto"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Carga Producto"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Producto]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Union All\Carga Producto.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TRSLAP0639.STREAMING]"
+                  connectionManagerRefId="Package.ConnectionManagers[TRSLAP0639.STREAMING]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga Union All\Carga Producto.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga Union All\Carga Producto.Inputs[OLE DB Destination Input].Columns[Copy of EnglishProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of EnglishProductName"
+                      externalMetadataColumnId="Package\Carga Union All\Carga Producto.Inputs[OLE DB Destination Input].ExternalColumns[EnglishProductName]"
+                      lineageId="Package\Carga Union All\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of EnglishProductName]" />
+                    <inputColumn
+                      refId="Package\Carga Union All\Carga Producto.Inputs[OLE DB Destination Input].Columns[Copy of Color]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Copy of Color"
+                      externalMetadataColumnId="Package\Carga Union All\Carga Producto.Inputs[OLE DB Destination Input].ExternalColumns[Color]"
+                      lineageId="Package\Carga Union All\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Color]" />
+                    <inputColumn
+                      refId="Package\Carga Union All\Carga Producto.Inputs[OLE DB Destination Input].Columns[Copy of EnglishDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="400"
+                      cachedName="Copy of EnglishDescription"
+                      externalMetadataColumnId="Package\Carga Union All\Carga Producto.Inputs[OLE DB Destination Input].ExternalColumns[EnglishDescription]"
+                      lineageId="Package\Carga Union All\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of EnglishDescription]" />
+                    <inputColumn
+                      refId="Package\Carga Union All\Carga Producto.Inputs[OLE DB Destination Input].Columns[Copy of ListPrice]"
+                      cachedDataType="cy"
+                      cachedName="Copy of ListPrice"
+                      externalMetadataColumnId="Package\Carga Union All\Carga Producto.Inputs[OLE DB Destination Input].ExternalColumns[ListPrice]"
+                      lineageId="Package\Carga Union All\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ListPrice]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Union All\Carga Producto.Inputs[OLE DB Destination Input].ExternalColumns[EnglishProductName]"
+                      dataType="wstr"
+                      length="50"
+                      name="EnglishProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Union All\Carga Producto.Inputs[OLE DB Destination Input].ExternalColumns[Color]"
+                      dataType="wstr"
+                      length="15"
+                      name="Color" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Union All\Carga Producto.Inputs[OLE DB Destination Input].ExternalColumns[EnglishDescription]"
+                      dataType="wstr"
+                      length="400"
+                      name="EnglishDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Union All\Carga Producto.Inputs[OLE DB Destination Input].ExternalColumns[ListPrice]"
+                      dataType="cy"
+                      name="ListPrice" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga Union All\Carga Producto.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Carga Union All\Carga Producto.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Union All\Carga Producto.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Union All\Carga Producto.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Union All\Carga Producto.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Union All\Carga Producto.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga Union All\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Carga Union All\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga Union All\Data Conversion.Inputs[Data Conversion Input].Columns[EnglishProductName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      lineageId="Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[EnglishProductName]" />
+                    <inputColumn
+                      refId="Package\Carga Union All\Data Conversion.Inputs[Data Conversion Input].Columns[Color]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Color"
+                      lineageId="Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[Color]" />
+                    <inputColumn
+                      refId="Package\Carga Union All\Data Conversion.Inputs[Data Conversion Input].Columns[EnglishDescription]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="400"
+                      cachedName="EnglishDescription"
+                      lineageId="Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[EnglishDescription]" />
+                    <inputColumn
+                      refId="Package\Carga Union All\Data Conversion.Inputs[Data Conversion Input].Columns[ListPrice]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ListPrice"
+                      lineageId="Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[ListPrice]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga Union All\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Carga Union All\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Union All\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of EnglishProductName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Carga Union All\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of EnglishProductName]"
+                      name="Copy of EnglishProductName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[EnglishProductName]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Union All\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Color]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="15"
+                      lineageId="Package\Carga Union All\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Color]"
+                      name="Copy of Color"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[Color]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Union All\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of EnglishDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="400"
+                      lineageId="Package\Carga Union All\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of EnglishDescription]"
+                      name="Copy of EnglishDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[EnglishDescription]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Union All\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ListPrice]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carga Union All\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ListPrice]"
+                      name="Copy of ListPrice"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[ListPrice]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Carga Union All\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Carga Union All\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Union All\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Union All\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Union All\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Union All\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga Union All\Producto 1"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2058"
+              name="Producto 1"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Union All\Producto 1.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Conexion Producto 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Conexion Producto 1]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output].Columns[EnglishProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output].ExternalColumns[EnglishProductName]"
+                      length="50"
+                      lineageId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output].Columns[EnglishProductName]"
+                      name="EnglishProductName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output].Columns[Color]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output].ExternalColumns[Color]"
+                      length="50"
+                      lineageId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output].Columns[Color]"
+                      name="Color"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output].Columns[EnglishDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output].ExternalColumns[EnglishDescription]"
+                      length="400"
+                      lineageId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output].Columns[EnglishDescription]"
+                      name="EnglishDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output].Columns[ListPrice]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output].ExternalColumns[ListPrice]"
+                      length="50"
+                      lineageId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output].Columns[ListPrice]"
+                      name="ListPrice"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output].ExternalColumns[EnglishProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EnglishProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output].ExternalColumns[Color]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Color" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output].ExternalColumns[EnglishDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="400"
+                      name="EnglishDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output].ExternalColumns[ListPrice]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ListPrice" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga Union All\Producto 2"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2058"
+              name="Producto 2"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Union All\Producto 2.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Conexion Producto 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[Conexion Producto 2]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output].Columns[EnglishProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output].ExternalColumns[EnglishProductName]"
+                      length="50"
+                      lineageId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output].Columns[EnglishProductName]"
+                      name="EnglishProductName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output].Columns[Color]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output].ExternalColumns[Color]"
+                      length="50"
+                      lineageId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output].Columns[Color]"
+                      name="Color"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output].Columns[EnglishDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output].ExternalColumns[EnglishDescription]"
+                      length="400"
+                      lineageId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output].Columns[EnglishDescription]"
+                      name="EnglishDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output].Columns[ListPrice]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output].ExternalColumns[ListPrice]"
+                      length="50"
+                      lineageId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output].Columns[ListPrice]"
+                      name="ListPrice"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output].ExternalColumns[EnglishProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EnglishProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output].ExternalColumns[Color]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Color" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output].ExternalColumns[EnglishDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="400"
+                      name="EnglishDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output].ExternalColumns[ListPrice]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ListPrice" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga Union All\Producto 3"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2058"
+              name="Producto 3"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Union All\Producto 3.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Conexion Producto 3]"
+                  connectionManagerRefId="Package.ConnectionManagers[Conexion Producto 3]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output].Columns[EnglishProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output].ExternalColumns[EnglishProductName]"
+                      length="50"
+                      lineageId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output].Columns[EnglishProductName]"
+                      name="EnglishProductName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output].Columns[Color]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output].ExternalColumns[Color]"
+                      length="50"
+                      lineageId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output].Columns[Color]"
+                      name="Color"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output].Columns[EnglishDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output].ExternalColumns[EnglishDescription]"
+                      length="400"
+                      lineageId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output].Columns[EnglishDescription]"
+                      name="EnglishDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output].Columns[ListPrice]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output].ExternalColumns[ListPrice]"
+                      length="50"
+                      lineageId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output].Columns[ListPrice]"
+                      name="ListPrice"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output].ExternalColumns[EnglishProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EnglishProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output].ExternalColumns[Color]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Color" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output].ExternalColumns[EnglishDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="400"
+                      name="EnglishDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output].ExternalColumns[ListPrice]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ListPrice" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga Union All\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Carga Union All\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga Union All\Union All.Inputs[Union All Input 1].Columns[EnglishProductName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      lineageId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output].Columns[EnglishProductName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[EnglishProductName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Union All\Union All.Inputs[Union All Input 1].Columns[Color]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Color"
+                      lineageId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output].Columns[Color]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[Color]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Union All\Union All.Inputs[Union All Input 1].Columns[EnglishDescription]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="400"
+                      cachedName="EnglishDescription"
+                      lineageId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output].Columns[EnglishDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[EnglishDescription]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Union All\Union All.Inputs[Union All Input 1].Columns[ListPrice]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ListPrice"
+                      lineageId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output].Columns[ListPrice]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[ListPrice]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Carga Union All\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga Union All\Union All.Inputs[Union All Input 2].Columns[EnglishProductName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      lineageId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output].Columns[EnglishProductName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[EnglishProductName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Union All\Union All.Inputs[Union All Input 2].Columns[Color]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Color"
+                      lineageId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output].Columns[Color]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[Color]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Union All\Union All.Inputs[Union All Input 2].Columns[EnglishDescription]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="400"
+                      cachedName="EnglishDescription"
+                      lineageId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output].Columns[EnglishDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[EnglishDescription]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Union All\Union All.Inputs[Union All Input 2].Columns[ListPrice]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ListPrice"
+                      lineageId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output].Columns[ListPrice]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[ListPrice]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Carga Union All\Union All.Inputs[Union All Input 3]"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga Union All\Union All.Inputs[Union All Input 3].Columns[EnglishProductName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EnglishProductName"
+                      lineageId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output].Columns[EnglishProductName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[EnglishProductName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Union All\Union All.Inputs[Union All Input 3].Columns[Color]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Color"
+                      lineageId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output].Columns[Color]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[Color]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Union All\Union All.Inputs[Union All Input 3].Columns[EnglishDescription]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="400"
+                      cachedName="EnglishDescription"
+                      lineageId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output].Columns[EnglishDescription]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[EnglishDescription]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Union All\Union All.Inputs[Union All Input 3].Columns[ListPrice]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ListPrice"
+                      lineageId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output].Columns[ListPrice]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[ListPrice]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Carga Union All\Union All.Inputs[Union All Input 4]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 4">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga Union All\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[EnglishProductName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[EnglishProductName]"
+                      name="EnglishProductName" />
+                    <outputColumn
+                      refId="Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[Color]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[Color]"
+                      name="Color" />
+                    <outputColumn
+                      refId="Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[EnglishDescription]"
+                      codePage="1252"
+                      dataType="str"
+                      length="400"
+                      lineageId="Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[EnglishDescription]"
+                      name="EnglishDescription" />
+                    <outputColumn
+                      refId="Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[ListPrice]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Carga Union All\Union All.Outputs[Union All Output 1].Columns[ListPrice]"
+                      name="ListPrice" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carga Union All.Paths[Data Conversion Output]"
+              endId="Package\Carga Union All\Carga Producto.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Carga Union All\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Carga Union All.Paths[Flat File Source Output]"
+              endId="Package\Carga Union All\Union All.Inputs[Union All Input 1]"
+              name="Flat File Source Output"
+              startId="Package\Carga Union All\Producto 2.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Carga Union All.Paths[Flat File Source Output1]"
+              endId="Package\Carga Union All\Union All.Inputs[Union All Input 2]"
+              name="Flat File Source Output"
+              startId="Package\Carga Union All\Producto 3.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Carga Union All.Paths[Flat File Source Output2]"
+              endId="Package\Carga Union All\Union All.Inputs[Union All Input 3]"
+              name="Flat File Source Output"
+              startId="Package\Carga Union All\Producto 1.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Carga Union All.Paths[Union All Output 1]"
+              endId="Package\Carga Union All\Data Conversion.Inputs[Data Conversion Input]"
+              name="Union All Output 1"
+              startId="Package\Carga Union All\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Limpiar Tabla Producto"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{EC66520D-DE3C-4863-8A20-F3BA622519AE}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Limpiar Tabla Producto"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D86BFD54-3D9A-4B4D-A410-2D6E7E5F8CDC}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE PRODUCTO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{E44C832F-1712-41E4-AC9A-C17589F903F9}"
+      DTS:From="Package\Limpiar Tabla Producto"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Carga Union All" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Carga Union All"
+          TopLeft="158,119" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Limpiar Tabla Producto"
+          TopLeft="135,36" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="233.75,78">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carga Union All">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Carga Union All\Producto 1"
+          TopLeft="70,36" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Carga Union All\Producto 2"
+          TopLeft="223,33" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Carga Union All\Producto 3"
+          TopLeft="379,37" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Carga Union All\Union All"
+          TopLeft="234,133" />
+        <EdgeLayout
+          Id="Package\Carga Union All.Paths[Flat File Source Output]"
+          TopLeft="292.25,75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Union All.Paths[Flat File Source Output1]"
+          TopLeft="445,79">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-120.75,54"
+              Start="0,0"
+              End="-120.75,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.236074270557" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.236074270557"
+                    Point2="0,35.236074270557"
+                    Point3="-4,35.236074270557" />
+                  <mssgle:LineSegment
+                    End="-116.75,35.236074270557" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-116.75,35.236074270557"
+                    Point2="-120.75,35.236074270557"
+                    Point3="-120.75,39.236074270557" />
+                  <mssgle:LineSegment
+                    End="-120.75,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Union All.Paths[Flat File Source Output2]"
+          TopLeft="136,78">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="130.75,55"
+              Start="0,0"
+              End="130.75,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.8885941644562" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.8885941644562"
+                    Point2="0,35.8885941644562"
+                    Point3="4,35.8885941644562" />
+                  <mssgle:LineSegment
+                    End="126.75,35.8885941644562" />
+                  <mssgle:CubicBezierSegment
+                    Point1="126.75,35.8885941644562"
+                    Point2="130.75,35.8885941644562"
+                    Point3="130.75,39.8885941644562" />
+                  <mssgle:LineSegment
+                    End="130.75,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Carga Union All\Data Conversion"
+          TopLeft="219,208" />
+        <EdgeLayout
+          Id="Package\Carga Union All.Paths[Union All Output 1]"
+          TopLeft="297.5,175">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Carga Union All\Carga Producto"
+          TopLeft="225,281" />
+        <EdgeLayout
+          Id="Package\Carga Union All.Paths[Data Conversion Output]"
+          TopLeft="301.25,250">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga Union All\Carga Producto">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
